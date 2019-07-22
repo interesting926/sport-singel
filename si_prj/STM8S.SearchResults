@@ -1,0 +1,4 @@
+---- mp3.dely Matches (4 in 1 files) ----
+Function.c (project\stm8s_stdperiph_template\source):	if(mp3.dely==0)
+Function.c (project\stm8s_stdperiph_template\source):		mp3.dely=20;
+Function.c (project\stm8s_stdperiph_template\source):	if(mp3.dely) mp3.dely--;
