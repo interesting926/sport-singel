@@ -40,7 +40,6 @@ void MP3_Init(void)
 	mp3.QueueIndex=0;
 	mp3.status = mp3_stop;
 	mp3.queue_play=0;
-	MUSIC_SET_VOLUMN(15);
 	MUSIC_PLAY_CONTENT(17);
 }
 
@@ -136,8 +135,9 @@ void MUSIC_CLEAR_QUEUE(void)
 
 void MUSIC_SET_VOLUMN(u8 vol)
 {
-	c_dbg_print("[MP3] Volumn:%d!\r\n",vol);
+	//c_dbg_print("[MP3] Volumn:%d!\r\n",vol);
 	MUSIC_Write_Cmd(0xFFE0+vol);//调整音量
+	delay_ms(200);
 }
 
 void MUSIC_ADD_CONTENT(u8 num)
@@ -434,6 +434,19 @@ void Uart_BLE_Handler(void)
 						Uart2_Send_N_bytes(uart2.sbuf,14);
 						c_dbg_print("[BLE-R]cnt:%d,time:%d,cal:%d\r\n",rpm.total_cnts,timer.total_time,rpm.calorie);
 					}break;
+					case 0xD5:
+                    {
+                        if(uart2.rbuf[7]<8)
+                        {
+                        	MUSIC_SET_VOLUMN(uart2.rbuf[7]*2);
+                            MUSIC_Write_Cmd(0);                            
+                        }
+                        
+                    }break;
+					
+					
+					
+					
 					
 				}
 				rpm.timeout=Timeout_Max;	//1分钟
