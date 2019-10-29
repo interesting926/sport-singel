@@ -25,7 +25,7 @@ if not "%~1" == "" goto debugFile
 
 @echo on 
 
-"C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.3\common\bin\cspybat" -f "E:\work\gitlab\室外路径\室外路径开发\V1.3带语音\室外路径V1.3LIB 单次运动板\STM8S_StdPeriph_Lib\Project\STM8S_StdPeriph_Template\EWSTM8\settings\Project.STM8S105.general.xcl" --backend -f "E:\work\gitlab\室外路径\室外路径开发\V1.3带语音\室外路径V1.3LIB 单次运动板\STM8S_StdPeriph_Lib\Project\STM8S_StdPeriph_Template\EWSTM8\settings\Project.STM8S105.driver.xcl" 
+"C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.3\common\bin\cspybat" -f "E:\work\gitlab\6系列竞赛车\室外路径开发\V1.3带语音\室外路径V1.3LIB 单次运动板\STM8S_StdPeriph_Lib\Project\STM8S_StdPeriph_Template\EWSTM8\settings\Project.STM8S105.general.xcl" --backend -f "E:\work\gitlab\6系列竞赛车\室外路径开发\V1.3带语音\室外路径V1.3LIB 单次运动板\STM8S_StdPeriph_Lib\Project\STM8S_StdPeriph_Template\EWSTM8\settings\Project.STM8S105.driver.xcl" 
 
 @echo off 
 goto end 
@@ -34,7 +34,7 @@ goto end
 
 @echo on 
 
-"C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.3\common\bin\cspybat" -f "E:\work\gitlab\室外路径\室外路径开发\V1.3带语音\室外路径V1.3LIB 单次运动板\STM8S_StdPeriph_Lib\Project\STM8S_StdPeriph_Template\EWSTM8\settings\Project.STM8S105.general.xcl" "--debug_file=%~1" --backend -f "E:\work\gitlab\室外路径\室外路径开发\V1.3带语音\室外路径V1.3LIB 单次运动板\STM8S_StdPeriph_Lib\Project\STM8S_StdPeriph_Template\EWSTM8\settings\Project.STM8S105.driver.xcl" 
+"C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.3\common\bin\cspybat" -f "E:\work\gitlab\6系列竞赛车\室外路径开发\V1.3带语音\室外路径V1.3LIB 单次运动板\STM8S_StdPeriph_Lib\Project\STM8S_StdPeriph_Template\EWSTM8\settings\Project.STM8S105.general.xcl" "--debug_file=%~1" --backend -f "E:\work\gitlab\6系列竞赛车\室外路径开发\V1.3带语音\室外路径V1.3LIB 单次运动板\STM8S_StdPeriph_Lib\Project\STM8S_StdPeriph_Template\EWSTM8\settings\Project.STM8S105.driver.xcl" 
 
 @echo off 
 :end

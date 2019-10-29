@@ -182,10 +182,7 @@ void Uart_Time_Handler(void)
 *********************************************************/
 void Print_System_Info(void)
 {
-	c_dbg_print((char *)Product_Info);      //打印产品信息
-	c_dbg_print("Ver: %s\r\n",Software_Ver);       //软件版本
-	c_dbg_print("DATE: %s\r\n",__DATE__);        //软件编译日期和时间
-	c_dbg_print("TIME: %s\r\n",__TIME__);
+
 }
 /*********************************************************
 * Function Name  : None

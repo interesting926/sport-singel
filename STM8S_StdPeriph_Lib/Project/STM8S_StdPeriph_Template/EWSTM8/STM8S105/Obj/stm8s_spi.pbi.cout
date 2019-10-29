@@ -1,22 +1,22 @@
-"E:\work\gitlab\室外路径\室外路径开发\V1.3带语音\室外路径V1.3LIB 单次运动板\STM8S_StdPeriph_Lib\Libraries\STM8S_StdPeriph_Driver\src\stm8s_spi.c"
+"E:\work\gitlab\6系列竞赛车\室外路径开发\V1.3带语音\室外路径V1.3LIB 单次运动板\STM8S_StdPeriph_Lib\Libraries\STM8S_StdPeriph_Driver\src\stm8s_spi.c"
 -std=c99
 -ferror-limit=100
 -I
-E:\work\gitlab\室外路径\室外路径开发\V1.3带语音\室外路径V1.3LIB 单次运动板\STM8S_StdPeriph_Lib\Project\STM8S_StdPeriph_Template\EWSTM8\..
+E:\work\gitlab\6系列竞赛车\室外路径开发\V1.3带语音\室外路径V1.3LIB 单次运动板\STM8S_StdPeriph_Lib\Project\STM8S_StdPeriph_Template\EWSTM8\..
 -I
-E:\work\gitlab\室外路径\室外路径开发\V1.3带语音\室外路径V1.3LIB 单次运动板\STM8S_StdPeriph_Lib\Project\STM8S_StdPeriph_Template\EWSTM8\..\..\..\Libraries\STM8S_StdPeriph_Driver\inc
+E:\work\gitlab\6系列竞赛车\室外路径开发\V1.3带语音\室外路径V1.3LIB 单次运动板\STM8S_StdPeriph_Lib\Project\STM8S_StdPeriph_Template\EWSTM8\..\..\..\Libraries\STM8S_StdPeriph_Driver\inc
 -I
-E:\work\gitlab\室外路径\室外路径开发\V1.3带语音\室外路径V1.3LIB 单次运动板\STM8S_StdPeriph_Lib\Project\STM8S_StdPeriph_Template\EWSTM8\..\source
+E:\work\gitlab\6系列竞赛车\室外路径开发\V1.3带语音\室外路径V1.3LIB 单次运动板\STM8S_StdPeriph_Lib\Project\STM8S_StdPeriph_Template\EWSTM8\..\source
 -I
 C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.3\stm8\inc
 -I
 C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.3\stm8\inc\c
 -I
-E:\work\gitlab\室外路径\室外路径开发\V1.3带语音\室外路径V1.3LIB 单次运动板\STM8S_StdPeriph_Lib\Project\STM8S_StdPeriph_Template
+E:\work\gitlab\6系列竞赛车\室外路径开发\V1.3带语音\室外路径V1.3LIB 单次运动板\STM8S_StdPeriph_Lib\Project\STM8S_StdPeriph_Template
 -I
-E:\work\gitlab\室外路径\室外路径开发\V1.3带语音\室外路径V1.3LIB 单次运动板\STM8S_StdPeriph_Lib\Libraries\STM8S_StdPeriph_Driver\inc
+E:\work\gitlab\6系列竞赛车\室外路径开发\V1.3带语音\室外路径V1.3LIB 单次运动板\STM8S_StdPeriph_Lib\Libraries\STM8S_StdPeriph_Driver\inc
 -I
-E:\work\gitlab\室外路径\室外路径开发\V1.3带语音\室外路径V1.3LIB 单次运动板\STM8S_StdPeriph_Lib\Project\STM8S_StdPeriph_Template\source
+E:\work\gitlab\6系列竞赛车\室外路径开发\V1.3带语音\室外路径V1.3LIB 单次运动板\STM8S_StdPeriph_Lib\Project\STM8S_StdPeriph_Template\source
 -DSTM8S105=1
 -D__CHAR_BITS__=8
 -D__CHAR_MAX__=0xff

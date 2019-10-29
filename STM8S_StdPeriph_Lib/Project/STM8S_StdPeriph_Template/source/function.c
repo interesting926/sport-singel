@@ -40,6 +40,7 @@ void MP3_Init(void)
 	mp3.QueueIndex=0;
 	mp3.status = mp3_stop;
 	mp3.queue_play=0;
+    //MUSIC_SET_VOLUMN(15);
 	MUSIC_PLAY_CONTENT(17);
 }
 
@@ -104,7 +105,6 @@ void MUSIC_START_PLAY(void)
 		mp3.QueueIndex=0;
 		mp3.ChangeNow=1;	//立即播放
 		mp3.queue_play=1;
-		c_dbg_print("[MP3] Start Play!\r\n");
 }
 
 void MUSIC_PLAY_CONTENT(u8 num)
@@ -114,13 +114,11 @@ void MUSIC_PLAY_CONTENT(u8 num)
 		mp3.QueueIndex=0;
 		mp3.ChangeNow=1;	//立即播放
 		mp3.queue_play=1; 			
-		c_dbg_print("[MP3] Play content:%d!\r\n",num);
 }
 void MUSIC_STOP_PLAY(void)
 {
 		mp3.status = mp3_stop;
 		mp3.queue_play=0;
-		c_dbg_print("[MP3] STOP\r\n");
 }
 
 void MUSIC_CLEAR_QUEUE(void)
@@ -130,12 +128,10 @@ void MUSIC_CLEAR_QUEUE(void)
 		mp3.QueueIndex=0;
 		mp3.status = mp3_stop;
 		mp3.queue_play=0;
-		c_dbg_print("[MP3] CLEAR\r\n");
 }
 
 void MUSIC_SET_VOLUMN(u8 vol)
 {
-	//c_dbg_print("[MP3] Volumn:%d!\r\n",vol);
 	MUSIC_Write_Cmd(0xFFE0+vol);//调整音量
 	delay_ms(200);
 }
@@ -256,7 +252,6 @@ void Music_Play_Handler(void)
 			{
 				if((mp3.status == mp3_stop) || mp3.ChangeNow) //当播放完一首或者强行切歌
 				{
-					c_dbg_print("[MP3]:%d,%d/%d",mp3.queue[mp3.QueueIndex],mp3.QueueIndex+1,mp3.QueueSize);
 					MUSIC_Write_Cmd(mp3.queue[mp3.QueueIndex]);
 					mp3.ChangeNow=0;
 					mp3.QueueIndex++;
@@ -276,7 +271,7 @@ void Music_Play_Handler(void)
 					{
 						if(mp3.dely==0)
 						{
-							mp3.busy=1;mp3.dely=20;c_dbg_print("<"); //播放繁忙
+							mp3.busy=1;mp3.dely=20;//播放繁忙
 						}
 					}
 					else
@@ -290,7 +285,7 @@ void Music_Play_Handler(void)
 					{
 						if(mp3.dely==0)
 						{
-							mp3.busy=0;mp3.status = mp3_stop;c_dbg_print(">\r\n");//播放完毕
+							mp3.busy=0;mp3.status = mp3_stop;//播放完毕
 			}
 					}
 					else
@@ -371,7 +366,6 @@ void Uart_BLE_Handler(void)
 						uart2.sbuf[6]=0xD0;
 						uart2.sbuf[7]=Get_Buffer_Checksum(&uart2.sbuf[2],5);
 						Uart2_Send_N_bytes((u8 *)uart2.sbuf,8);
-						c_dbg_print("[BLE]: ***********ACK*********\r\n");
 					}break;
 					case 0xD1:	//启动停止
 					{
@@ -390,7 +384,6 @@ void Uart_BLE_Handler(void)
 							uart2.sbuf[7]=0x01; //OK
 							uart2.sbuf[8]=Get_Buffer_Checksum(&uart2.sbuf[2],6);
 							Uart2_Send_N_bytes((u8 *)uart2.sbuf,9);
-							c_dbg_print("[BLE]: ***********Stop*********\r\n");
 						}
 						else if(uart2.rbuf[7]==0x01) //开始健身车
 						{
@@ -412,7 +405,6 @@ void Uart_BLE_Handler(void)
 							uart2.sbuf[7]=0x01; //OK
 							uart2.sbuf[8]=Get_Buffer_Checksum(&uart2.sbuf[2],6);
 							Uart2_Send_N_bytes((u8 *)uart2.sbuf,9);
-							c_dbg_print("[BLE]: ***********Start*********\r\n");
 						}
 					}break;
 					case 0xD2:
@@ -432,22 +424,16 @@ void Uart_BLE_Handler(void)
 						uart2.sbuf[12]=rpm.calorie;
 						uart2.sbuf[13]=Get_Buffer_Checksum(&uart2.sbuf[2],11);
 						Uart2_Send_N_bytes(uart2.sbuf,14);
-						c_dbg_print("[BLE-R]cnt:%d,time:%d,cal:%d\r\n",rpm.total_cnts,timer.total_time,rpm.calorie);
 					}break;
 					case 0xD5:
                     {
                         if(uart2.rbuf[7]<8)
                         {
-                        	MUSIC_SET_VOLUMN(uart2.rbuf[7]*2);
-                            MUSIC_Write_Cmd(0);                            
+                            MUSIC_SET_VOLUMN(uart2.rbuf[7]*2);
+                            MUSIC_Write_Cmd(17);                            
                         }
                         
-                    }break;
-					
-					
-					
-					
-					
+                    }break;					
 				}
 				rpm.timeout=Timeout_Max;	//1分钟
 				rpm.time_cnt=TimeCnt_Max;	//5秒钟
@@ -561,7 +547,6 @@ void RPM_Loop_Handler(void)
 				uart2.sbuf[12]=rpm.calorie;
 				uart2.sbuf[13]=Get_Buffer_Checksum(&uart2.sbuf[2],11);
 				Uart2_Send_N_bytes(uart2.sbuf,14);
-				c_dbg_print("[BLE-A]cnt:%d,time:%d,cal:%d\r\n",rpm.total_cnts,timer.total_time,rpm.calorie);
 			}
 		}
 

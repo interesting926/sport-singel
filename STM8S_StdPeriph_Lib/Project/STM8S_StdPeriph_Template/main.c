@@ -116,7 +116,6 @@ void main(void)
 	MP3_Init();
 	Soft_Init();
 	//Print_System_Info();
-	c_dbg_print("System Init is OK!\r\n");
 	enableInterrupts();INT_FLG=1;
 	while (1)
 	{
